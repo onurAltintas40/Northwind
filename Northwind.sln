@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.WebApi", "Northwind.WebApi\Northwind.WebApi.csproj", "{B07D45B4-699D-41CF-9273-1B418153BE5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.WebApi", "Northwind.WebApi\Northwind.WebApi.csproj", "{B07D45B4-699D-41CF-9273-1B418153BE5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Bll", "Northwind.Bll\Northwind.Bll.csproj", "{66994D5F-FF85-4ACD-B28D-ABD6877B32E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Bll", "Northwind.Bll\Northwind.Bll.csproj", "{66994D5F-FF85-4ACD-B28D-ABD6877B32E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Dal", "Northwind.Dal\Northwind.Dal.csproj", "{AAB08B51-D736-43DD-86C2-537DD3B0C572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Dal", "Northwind.Dal\Northwind.Dal.csproj", "{AAB08B51-D736-43DD-86C2-537DD3B0C572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Entity", "Northwind.Entity\Northwind.Entity.csproj", "{0AA0B200-6A58-449B-AB8C-9E3C3D09C7F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Entity", "Northwind.Entity\Northwind.Entity.csproj", "{0AA0B200-6A58-449B-AB8C-9E3C3D09C7F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Interface", "Northwind.Interface\Northwind.Interface.csproj", "{6C0A343A-7974-4F87-A808-83AC5B4B860C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0AA0B200-6A58-449B-AB8C-9E3C3D09C7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AA0B200-6A58-449B-AB8C-9E3C3D09C7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AA0B200-6A58-449B-AB8C-9E3C3D09C7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C0A343A-7974-4F87-A808-83AC5B4B860C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C0A343A-7974-4F87-A808-83AC5B4B860C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C0A343A-7974-4F87-A808-83AC5B4B860C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C0A343A-7974-4F87-A808-83AC5B4B860C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
