@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Northwind.Entity.Base;
+using System.Collections.Generic;
 
 #nullable disable
 
 namespace Northwind.Entity.Models
 {
-    public partial class Customer
+    public partial class Customer : EntityBase
     {
         public Customer()
         {

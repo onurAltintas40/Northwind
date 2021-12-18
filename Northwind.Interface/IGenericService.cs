@@ -24,5 +24,6 @@ namespace Northwind.Interface
 
         //filtrelemeye göre silmek eklenebilir.
         //kayıt sayısı alınabilir.
+        //harddelete fonksiyonu eklenebilir.
     }
 }

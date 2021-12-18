@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Northwind.Entity.Base;
+using System;
 
 #nullable disable
 
 namespace Northwind.Entity.Dto
 {
-    public partial class DtoOrder
+    public partial class DtoOrder : DtoBase
     {
         public DtoOrder()
         {            

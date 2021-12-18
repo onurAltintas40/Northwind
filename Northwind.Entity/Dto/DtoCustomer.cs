@@ -1,6 +1,9 @@
-﻿namespace Northwind.Entity.Dto
+﻿using Northwind.Entity.Base;
+using Northwind.Entity.IBase;
+
+namespace Northwind.Entity.Dto
 {
-    public class DtoCustomer
+    public class DtoCustomer : DtoBase
     {
         public DtoCustomer()
         {
