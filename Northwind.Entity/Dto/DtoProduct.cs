@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-
-#nullable disable
-
-namespace Northwind.Entity.Models
+﻿using Northwind.Entity.Base;
+namespace Northwind.Entity.Dto
 {
-    public partial class AlphabeticalListOfProduct : EntityBase
+    public class DtoProduct : DtoBase 
     {
+        public DtoProduct()
+        {
+            
+        }
+
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int? SupplierId { get; set; }
@@ -17,6 +18,5 @@ namespace Northwind.Entity.Models
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
-        public string CategoryName { get; set; }
     }
 }

@@ -1,18 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Northwind.Dal.Abstract;
 using Northwind.Entity.Models;
+using System;
 using System.Linq;
 
 namespace Northwind.Dal.Concrete.Entityframework.Repository
 {
-    public class OrderRepository : GenericRepository<Order>, IOrderRepository
+    public class ShipperRepository : GenericRepository<Shipper>, IShipperRepository
     {
-        public OrderRepository(DbContext context) : base(context)
+        public ShipperRepository(DbContext context) : base(context)
         {
 
         }
 
-        public IQueryable OrderReport(int orderId)
+        public IQueryable ShipperReport(int orderId)
         {
             return dbset.AsQueryable();
         }

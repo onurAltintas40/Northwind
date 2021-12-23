@@ -1,16 +1,12 @@
 ﻿using Northwind.Entity.Base;
-using System;
-using System.Collections.Generic;
 
-#nullable disable
-
-namespace Northwind.Entity.Models
+namespace Northwind.Entity.Dto
 {
-    public partial class Supplier : EntityBase
+    public class DtoSupplier : DtoBase
     {
-        public Supplier()
+        public DtoSupplier()
         {
-            Products = new HashSet<Product>();
+            
         }
 
         public int SupplierId { get; set; }
@@ -25,7 +21,5 @@ namespace Northwind.Entity.Models
         public string Phone { get; set; }
         public string Fax { get; set; }
         public string HomePage { get; set; }
-
-        public virtual ICollection<Product> Products { get; set; }
     }
 }

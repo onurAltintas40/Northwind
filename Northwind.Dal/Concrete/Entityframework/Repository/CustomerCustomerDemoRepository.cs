@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Northwind.Dal.Abstract;
 using Northwind.Entity.Models;
 using System.Linq;
 
 namespace Northwind.Dal.Concrete.Entityframework.Repository
 {
-    public class OrderRepository : GenericRepository<Order>, IOrderRepository
+    public class CustomerCustomerDemoRepository : GenericRepository<CustomerCustomerDemo>, ICustomerCustomerDemo
     {
-        public OrderRepository(DbContext context) : base(context)
+        public CustomerCustomerDemoRepository(DbContext context) : base(context)
         {
 
         }

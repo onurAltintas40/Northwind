@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace Northwind.Dal.Concrete.Entityframework.Repository
 {
-    public class OrderRepository : GenericRepository<Order>, IOrderRepository
+    public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
-        public OrderRepository(DbContext context) : base(context)
+        public ProductRepository(DbContext context) : base(context)
         {
 
         }
 
-        public IQueryable OrderReport(int orderId)
+        public IQueryable ProductReport(int orderId)
         {
             return dbset.AsQueryable();
         }

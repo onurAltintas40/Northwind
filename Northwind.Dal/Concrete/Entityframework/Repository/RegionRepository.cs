@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Northwind.Dal.Abstract;
 using Northwind.Entity.Models;
+using System;
 using System.Linq;
 
 namespace Northwind.Dal.Concrete.Entityframework.Repository
 {
-    public class OrderRepository : GenericRepository<Order>, IOrderRepository
+    public class RegionRepository : GenericRepository<Region>, IRegionRepository
     {
-        public OrderRepository(DbContext context) : base(context)
+        public RegionRepository(DbContext contex): base(contex)
         {
 
         }
-
-        public IQueryable OrderReport(int orderId)
+        public IQueryable RegionReport(int orderId)
         {
             return dbset.AsQueryable();
         }

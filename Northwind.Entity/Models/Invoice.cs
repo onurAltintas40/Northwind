@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Northwind.Entity.Base;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
 
 namespace Northwind.Entity.Models
 {
-    public partial class Invoice
+    public partial class Invoice : EntityBase
     {
         public string ShipName { get; set; }
         public string ShipAddress { get; set; }

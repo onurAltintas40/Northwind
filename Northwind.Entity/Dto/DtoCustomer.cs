@@ -1,5 +1,4 @@
 ﻿using Northwind.Entity.Base;
-using Northwind.Entity.IBase;
 
 namespace Northwind.Entity.Dto
 {
