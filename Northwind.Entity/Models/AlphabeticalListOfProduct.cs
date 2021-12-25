@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Northwind.Entity.Base;
 
 #nullable disable
 

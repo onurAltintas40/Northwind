@@ -17,5 +17,5 @@ namespace Northwind.Dal.Concrete.Entityframework.Repository
             return dbset.AsQueryable();
         }
     }
-    }
+    
 }

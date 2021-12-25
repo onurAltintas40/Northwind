@@ -16,33 +16,33 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
         {
         }
 
-        public virtual DbSet<AlphabeticalListOfProduct> AlphabeticalListOfProducts { get; set; }
+        public virtual DbSet<DtoAlphabeticalListOfProduct> AlphabeticalListOfProducts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<CategorySalesFor1997> CategorySalesFor1997s { get; set; }
-        public virtual DbSet<CurrentProductList> CurrentProductLists { get; set; }
+        public virtual DbSet<DtoCategorySalesFor1997> CategorySalesFor1997s { get; set; }
+        public virtual DbSet<DtoCurrentProductList> CurrentProductLists { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<CustomerAndSuppliersByCity> CustomerAndSuppliersByCities { get; set; }
+        public virtual DbSet<DtoCustomerAndSuppliersByCity> CustomerAndSuppliersByCities { get; set; }
         public virtual DbSet<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
         public virtual DbSet<CustomerDemographic> CustomerDemographics { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<EmployeeTerritory> EmployeeTerritories { get; set; }
-        public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<DtoInvoice> Invoices { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<OrderDetailsExtended> OrderDetailsExtendeds { get; set; }
-        public virtual DbSet<OrderSubtotal> OrderSubtotals { get; set; }
-        public virtual DbSet<OrdersQry> OrdersQries { get; set; }
+        public virtual DbSet<DtoOrderDetailsExtended> OrderDetailsExtendeds { get; set; }
+        public virtual DbSet<DtoOrderSubtotal> OrderSubtotals { get; set; }
+        public virtual DbSet<DtoOrdersQry> OrdersQries { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductSalesFor1997> ProductSalesFor1997s { get; set; }
-        public virtual DbSet<ProductsAboveAveragePrice> ProductsAboveAveragePrices { get; set; }
-        public virtual DbSet<ProductsByCategory> ProductsByCategories { get; set; }
-        public virtual DbSet<QuarterlyOrder> QuarterlyOrders { get; set; }
+        public virtual DbSet<DtoProductSalesFor1997> ProductSalesFor1997s { get; set; }
+        public virtual DbSet<DtoProductsAboveAveragePrice> ProductsAboveAveragePrices { get; set; }
+        public virtual DbSet<DtoProductsByCategory> ProductsByCategories { get; set; }
+        public virtual DbSet<DtoQuarterlyOrder> QuarterlyOrders { get; set; }
         public virtual DbSet<Region> Regions { get; set; }
-        public virtual DbSet<SalesByCategory> SalesByCategories { get; set; }
-        public virtual DbSet<SalesTotalsByAmount> SalesTotalsByAmounts { get; set; }
+        public virtual DbSet<DtoSalesByCategory> SalesByCategories { get; set; }
+        public virtual DbSet<DtoSalesTotalsByAmount> SalesTotalsByAmounts { get; set; }
         public virtual DbSet<Shipper> Shippers { get; set; }
-        public virtual DbSet<SummaryOfSalesByQuarter> SummaryOfSalesByQuarters { get; set; }
-        public virtual DbSet<SummaryOfSalesByYear> SummaryOfSalesByYears { get; set; }
+        public virtual DbSet<DtoSummaryOfSalesByQuarter> SummaryOfSalesByQuarters { get; set; }
+        public virtual DbSet<DtoSummaryOfSalesByYear> SummaryOfSalesByYears { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Territory> Territories { get; set; }
 
@@ -58,7 +58,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<AlphabeticalListOfProduct>(entity =>
+            modelBuilder.Entity<DtoAlphabeticalListOfProduct>(entity =>
             {
                 entity.HasNoKey();
 
@@ -98,7 +98,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.Picture).HasColumnType("image");
             });
 
-            modelBuilder.Entity<CategorySalesFor1997>(entity =>
+            modelBuilder.Entity<DtoCategorySalesFor1997>(entity =>
             {
                 entity.HasNoKey();
 
@@ -111,7 +111,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.CategorySales).HasColumnType("money");
             });
 
-            modelBuilder.Entity<CurrentProductList>(entity =>
+            modelBuilder.Entity<DtoCurrentProductList>(entity =>
             {
                 entity.HasNoKey();
 
@@ -164,7 +164,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.Region).HasMaxLength(15);
             });
 
-            modelBuilder.Entity<CustomerAndSuppliersByCity>(entity =>
+            modelBuilder.Entity<DtoCustomerAndSuppliersByCity>(entity =>
             {
                 entity.HasNoKey();
 
@@ -301,7 +301,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                     .HasConstraintName("FK_EmployeeTerritories_Territories");
             });
 
-            modelBuilder.Entity<Invoice>(entity =>
+            modelBuilder.Entity<DtoInvoice>(entity =>
             {
                 entity.HasNoKey();
 
@@ -468,7 +468,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                     .HasConstraintName("FK_Order_Details_Products");
             });
 
-            modelBuilder.Entity<OrderDetailsExtended>(entity =>
+            modelBuilder.Entity<DtoOrderDetailsExtended>(entity =>
             {
                 entity.HasNoKey();
 
@@ -487,7 +487,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
             });
 
-            modelBuilder.Entity<OrderSubtotal>(entity =>
+            modelBuilder.Entity<DtoOrderSubtotal>(entity =>
             {
                 entity.HasNoKey();
 
@@ -498,7 +498,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.Subtotal).HasColumnType("money");
             });
 
-            modelBuilder.Entity<OrdersQry>(entity =>
+            modelBuilder.Entity<DtoOrdersQry>(entity =>
             {
                 entity.HasNoKey();
 
@@ -593,7 +593,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                     .HasConstraintName("FK_Products_Suppliers");
             });
 
-            modelBuilder.Entity<ProductSalesFor1997>(entity =>
+            modelBuilder.Entity<DtoProductSalesFor1997>(entity =>
             {
                 entity.HasNoKey();
 
@@ -610,7 +610,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.ProductSales).HasColumnType("money");
             });
 
-            modelBuilder.Entity<ProductsAboveAveragePrice>(entity =>
+            modelBuilder.Entity<DtoProductsAboveAveragePrice>(entity =>
             {
                 entity.HasNoKey();
 
@@ -623,7 +623,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
             });
 
-            modelBuilder.Entity<ProductsByCategory>(entity =>
+            modelBuilder.Entity<DtoProductsByCategory>(entity =>
             {
                 entity.HasNoKey();
 
@@ -640,7 +640,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.QuantityPerUnit).HasMaxLength(20);
             });
 
-            modelBuilder.Entity<QuarterlyOrder>(entity =>
+            modelBuilder.Entity<DtoQuarterlyOrder>(entity =>
             {
                 entity.HasNoKey();
 
@@ -675,7 +675,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                     .IsFixedLength(true);
             });
 
-            modelBuilder.Entity<SalesByCategory>(entity =>
+            modelBuilder.Entity<DtoSalesByCategory>(entity =>
             {
                 entity.HasNoKey();
 
@@ -694,7 +694,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.ProductSales).HasColumnType("money");
             });
 
-            modelBuilder.Entity<SalesTotalsByAmount>(entity =>
+            modelBuilder.Entity<DtoSalesTotalsByAmount>(entity =>
             {
                 entity.HasNoKey();
 
@@ -722,7 +722,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.Phone).HasMaxLength(24);
             });
 
-            modelBuilder.Entity<SummaryOfSalesByQuarter>(entity =>
+            modelBuilder.Entity<DtoSummaryOfSalesByQuarter>(entity =>
             {
                 entity.HasNoKey();
 
@@ -735,7 +735,7 @@ namespace Northwind.Dal.Concrete.Entityframework.Context
                 entity.Property(e => e.Subtotal).HasColumnType("money");
             });
 
-            modelBuilder.Entity<SummaryOfSalesByYear>(entity =>
+            modelBuilder.Entity<DtoSummaryOfSalesByYear>(entity =>
             {
                 entity.HasNoKey();
 
