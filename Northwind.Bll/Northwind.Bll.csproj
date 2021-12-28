@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.Dal\Northwind.Dal.csproj" />
+    <ProjectReference Include="..\Northwind.Interface\Northwind.Interface.csproj" />
+  </ItemGroup>
+
 </Project>
