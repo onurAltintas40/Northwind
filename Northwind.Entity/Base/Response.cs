@@ -9,7 +9,7 @@ namespace Northwind.Entity.Base
         public object Data { get; set; }
     }
 
-    public class Response<T> : IResponse
+    public class Response<T> : IResponse<T>
     {
         public string Message { get; set; }
         public int StatusCode { get; set; }

@@ -1,6 +1,5 @@
 ﻿using Northwind.Dal.Abstract;
 using Northwind.Entity.Base;
-using Northwind.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +8,18 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
 using Northwind.Entity.IBase;
+using Northwind.Interface;
 
 namespace Northwind.Bll.Base
 {
     public class BllBase<T, TDto> : IGenericService<T, TDto> where T : EntityBase where TDto : DtoBase
     {
         #region Variables
-
-        readonly IUnitOfWork unitOfWork;
-        readonly IServiceProvider service;
-        readonly IGenericRepository<T> repository;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IServiceProvider service;
+        private readonly IGenericRepository<T> repository;
         Mapper mapper;
         #endregion
-
         public BllBase(IServiceProvider service)
         {
             unitOfWork = service.GetService<IUnitOfWork>();
@@ -30,28 +28,26 @@ namespace Northwind.Bll.Base
             mapper = new Mapper((IConfigurationProvider)service);
         }
 
-
-
-        public IResponse<TDto> Add(TDto item)
+        public IResponse<TDto> Add(TDto item, bool saveChanges = true)
         {
             try
             {
                 var resolvedResult = "";
                 var TResult = repository.Add(mapper.Map<T>(item));
-                resolvedResult = String.Join(',', TResult.GetType().GetProperties().Select(x => $" - {x.Name} ; {x.GetValue(TResult) ?? ""}"));
-                Save();
+                resolvedResult = String.Join(',', TResult.GetType().GetProperties().Select(x => $" - {x.Name} : {x.GetValue(TResult) ?? ""} - "));
 
+                if (saveChanges)
+                    Save();
 
                 return new Response<TDto>
                 {
                     StatusCode = 100,
-                    Message = "Success",
+                    Message = "Succuess",
                     Data = mapper.Map<T, TDto>(TResult)
                 };
             }
             catch (Exception ex)
             {
-
                 return new Response<TDto>
                 {
                     StatusCode = 200,
@@ -66,22 +62,22 @@ namespace Northwind.Bll.Base
             throw new NotImplementedException();
         }
 
-        public bool Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool Delete(TDto item)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public Task<bool> DeleteAsync(TDto item)
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> DeleteAsync(TDto item)
+        public bool DeleteById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -99,7 +95,6 @@ namespace Northwind.Bll.Base
             }
             catch (Exception ex)
             {
-
                 return new Response<TDto>
                 {
                     StatusCode = 999,
@@ -123,7 +118,7 @@ namespace Northwind.Bll.Base
         {
             throw new NotImplementedException();
         }
-                
+
         public TDto Update(TDto item)
         {
             throw new NotImplementedException();
@@ -133,10 +128,25 @@ namespace Northwind.Bll.Base
         {
             throw new NotImplementedException();
         }
+
         public void Save()
         {
             unitOfWork.SaveChanges();
         }
 
+        public IResponse<TDto> Add(TDto item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
